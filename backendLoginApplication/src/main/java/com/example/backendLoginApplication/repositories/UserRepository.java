@@ -8,4 +8,7 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 
     @Query("SELECT u FROM User u where u.name = ?1")
     User findUserByName(String name);
+
+    @Query("SELECT u FROM User u where u.userName = ?1")
+    User findUserByUsername(String userName);
 }

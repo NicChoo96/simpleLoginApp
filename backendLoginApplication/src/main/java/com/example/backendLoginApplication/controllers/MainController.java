@@ -2,12 +2,11 @@ package com.example.backendLoginApplication.controllers;
 
 import com.example.backendLoginApplication.entities.User;
 import com.example.backendLoginApplication.repositories.UserRepository;
+import com.example.backendLoginApplication.requestResponseBody.LoginForm;
+import com.example.backendLoginApplication.requestResponseBody.UserRoleData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -28,8 +27,24 @@ public class MainController {
     public @ResponseBody User getUser(@RequestParam(value="name") String name){
         User foundUser = userRepository.findUserByName(name);
 
-        if(foundUser == null) return new User("Not Found", "", "");
+        if(foundUser == null) return null;
 
         return foundUser;
+    }
+
+    // Given username and password Post request, match with DB after password encryption is hashed again
+    @PostMapping(path="/login")
+    public @ResponseBody UserRoleData loginWithUserNamePassword(@RequestBody LoginForm loginUser){
+        // Search user by username
+        User foundUser = userRepository.findUserByUsername(loginUser.getUsername());
+
+        // user not found from DB
+        if(foundUser == null) return null;
+
+        if(foundUser.matchPassword(loginUser.getPassword())){
+
+        }
+
+        return null;
     }
 }

@@ -26,9 +26,9 @@ CREATE TABLE user_role (
 INSERT INTO role (role_name)
 VALUES ("manager"), ("user");
 
--- Name Tom, UserName Upper Tomson, password: p@ssword123 (Bcrypt Encrypted 12 rounds)
+-- Name Tom, UserName Upper Tomson, password: p@ssword123 (Bcrypt Encrypted 12 rounds twice)
 INSERT INTO user(name, user_name, password)
-VALUES ("Tom", "Upper Tomson", "$2a$12$yIIHX2c6xPqNyssXZCd6veWiRyDDK3MeejIJSWmiVFDTILww1N9M.");
+VALUES ("Tom", "Upper Tomson", "$2a$12$1K37S7GrtDVBA8pjFSb3i.ovo/UZ4HyH0eECIq85Jc2zj5TBqFYG.");
 
 INSERT INTO user_role(user_id, role_id)
 SELECT u.id, r.id
@@ -36,9 +36,9 @@ FROM user u, role r
 where u.user_name = "Upper Tomson"
 and r.role_name = "manager";
 
--- Name John, UserName John Doe, password: p@ssword246 (Bcrypt Encrypted 12 rounds)
+-- Name John, UserName John Doe, password: p@ssword246 (Bcrypt Encrypted 12 rounds twice)
 INSERT INTO user(name, user_name, password)
-VALUES ("John", "John Doe", "$2a$12$BAwNbFJXVc8RSamstDWzquxyFK5b0iG3KyIMQ6O7Aw9yVNtcvR.9S");
+VALUES ("John", "John Doe", "$2a$12$lzUbLDnfkC5bc.I6i4U/BujvVI33.Xhbx8nWV974b8rLIk27HUgsu");
 
 INSERT INTO user_role(user_id, role_id)
 SELECT u.id, r.id
