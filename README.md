@@ -99,6 +99,21 @@ npm install
 npm start
 ```
 
+### SQL Seeded Username and Password
+
+Manager
+```
+username: Upper Tomson
+password: p@ssword123
+```
+
+User
+```
+username: John Doe
+password: p@ssword246
+```
+Feel free to seed more username and password into the DB.
+
 Password in the application used SHA256 hash when submitting credentials to the backend.
 
 Browser should auto-launch web application at localhost:3000
