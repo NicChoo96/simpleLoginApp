@@ -112,7 +112,8 @@ User
 username: John Doe
 password: p@ssword246
 ```
-Feel free to seed more username and password into the DB.
+Feel free to seed more username and password into the DB via sql query.
+I did not make an endpoint to populate username and password, but I am able to if required.
 
 Password in the application used SHA256 hash when submitting credentials to the backend.
 
