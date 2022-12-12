@@ -1,0 +1,31 @@
+
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: fit-content;
+    background-color: antiquewhite;
+}
+
+.navbar-padding {
+    /* height: var(--paddingHeight); */
+    height: 62px;
+}
+
+.navbar .title{
+    float:left;
+    padding-left: 20px;
+}
+
+.navbar .routes{
+    float:right;
+    margin-top: 20px;
+    padding-right: 20px;
+}
+
+.navbar .routes button {
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    cursor: pointer;
+}

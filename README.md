@@ -1,6 +1,6 @@
 Nicholas Choo Jian Hao Interview Assessment Submission
 
-Make sure to enter the **project location folder** to configure the application as stated, root folder is **LoginApplication**
+Make sure to enter the **project location folder** to configure the application as stated, root folder is **simpleLoginApp**
 
 ----
 ## Encoder Application
@@ -29,7 +29,7 @@ Make sure the software requirements are installed in order to run the applicatio
 ### Project Location
 - /database-server
 - /backendLoginApplication
-- /webapp-login
+- /login-webapp
 
 ## 1) Database Server MySQL DB
 
@@ -91,7 +91,7 @@ Response Body:
 ```
 
 ## 3) Login Web Application
-Folder Location from root: **./webapp-login**
+Folder Location from root: **./login-webapp**
 
 How to run web application
 ```

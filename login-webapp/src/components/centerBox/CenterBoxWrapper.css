@@ -1,0 +1,17 @@
+.center-box {
+  width: 300px;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 12px 32px rgba(0, 47, 102, 0.2);
+  border-radius: 8px;
+  align-self: center;
+  justify-self: center;
+  gap: 5px;
+  margin-top: 10%;
+}
+
+.center-box-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

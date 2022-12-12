@@ -1,0 +1,31 @@
+.login-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form {
+  align-self: center;
+  justify-self: center;
+  gap: 5px;
+}
+
+.login-form .input-error {
+    font-size: 0.7rem;
+    color: red;
+}
+
+.login-form button {
+    text-decoration: none;
+    border: none;
+    background-color: aquamarine;
+    font-size: large;
+    width: fit-content;
+    align-self: center;
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 10px rgba(0, 47, 102, 0.2);
+}

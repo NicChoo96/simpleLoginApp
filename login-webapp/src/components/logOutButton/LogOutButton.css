@@ -1,0 +1,13 @@
+.log-out-btn {
+  text-decoration: none;
+  border: none;
+  background-color: rgb(253, 157, 157);
+  font-size: normal;
+  width: fit-content;
+  align-self: center;
+  border-radius: 5px;
+  padding: 5px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 10px rgba(0, 47, 102, 0.2);
+}
