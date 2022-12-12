@@ -1,19 +1,26 @@
 package com.example.backendLoginApplication.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Entity
+@Table(name="user")
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
+
+    @Column(name="name")
     private String name;
+
+    @Column(name="user_name")
     private String userName;
+
+    @Column(name="password")
     private String password;
+
+    @OneToOne(mappedBy = "user")
+    private UserRole userRole;
 
     public User(){}
 
@@ -48,7 +55,7 @@ public class User {
     }
 
     public boolean matchPassword(String password){
-        return new BCryptPasswordEncoder().matches(password, this.password);
+        return new BCryptPasswordEncoder(12).matches(password, this.password);
     }
 }
 

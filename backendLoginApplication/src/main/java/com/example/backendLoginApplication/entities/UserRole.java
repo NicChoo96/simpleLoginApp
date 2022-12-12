@@ -1,29 +1,33 @@
 package com.example.backendLoginApplication.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name="user_role")
 public class UserRole {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private int userId;
-    private int roleId;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="user_id", referencedColumnName = "id")
+    private User user;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="role_id", referencedColumnName = "id")
+    private Role role;
 
     public UserRole(){}
 
-    public UserRole(int userId, int roleId){
-        this.userId = userId;
-        this.roleId = roleId;
+    public UserRole(User user, Role role){
+        this.user = user;
+        this.role = role;
     }
 
-    public int getUserId() { return this.userId; }
-    public void setUserId(int userId){ this.userId = userId; }
+    public User getUser() { return this.user; }
+    public void setUser(User user){ this.user = user; }
 
-    public int getRoleId(){ return this.roleId; }
-    public void setRoleId(int roleId){ this.roleId = roleId; }
+    public Role getRole(){ return this.role; }
+    public void setRole(Role role){ this.role = role; }
 
 }

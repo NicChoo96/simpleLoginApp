@@ -9,4 +9,8 @@ public class LoginForm {
 
     public String getPassword(){ return this.password; }
     public void setPassword(String password){ this.password = password; }
+
+    public String toString(){
+        return("UserName: " + this.userName + "/Password: " + this.password);
+    }
 }

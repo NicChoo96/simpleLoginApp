@@ -1,16 +1,20 @@
 package com.example.backendLoginApplication.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Set;
 
 @Entity
+@Table(name="role")
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @Column(name="role_name")
     private String roleName;
+
+    @OneToMany(mappedBy = "role")
+    private Set<UserRole> userRole;
 
     public Role(){}
 
