@@ -55,9 +55,9 @@ Load "login_mysql_db_seeder.sql" as SQL script and execute top to bottom in orde
 
 Folder Location from root: **./backendLoginApplication**
 
-### How to run the backend server
+### How to run the backend server (If the command doesn't work in in command line terminal, run it in intelliJ instead. For testing only.)
 ```
-./gradlew bootRun
+./gradle bootRun
 ```
 Endpoint enabled: 
 
