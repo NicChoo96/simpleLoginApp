@@ -1,18 +1,21 @@
 import './AccessDenyBox.css'
 import CenterBoxWrapper from 'components/centerBox/CenterBoxWrapper'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 const AccessDenyBox = () => {
   const navigate = useNavigate()
 
   const handleBackBtn = () => { navigate('/')}
 
+  const { t } = useTranslation();
+
   return (
     <CenterBoxWrapper>
-      <p>You are not logged in yet to see this page</p>
-      <p>User access denied</p>
+      <p>{t('notLoggedInToSeePage')}</p>
+      <p>{t('userAccessDenied')}</p>
       <button className="deny-btn" onClick={handleBackBtn}>
-        Back to Landing Page
+        {t('backToLandingPage')}
       </button>
     </CenterBoxWrapper>
   )

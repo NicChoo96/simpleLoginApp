@@ -1,0 +1,30 @@
+{
+    "landingPage": "登陆页面",
+    "loginPage": "登录",
+    "homePage": "主页",
+    "managerDashboardPage": "经理仪表板",
+
+    "welcomeLandingTitle": "欢迎来到此应用程序的登录页面",
+    "clickLoginInstruction": "首先点击顶部的登录",
+
+    "usernameRequired": "用户名是必需的",
+    "passwordRequired": "密码是必需的",
+    "passwordRequirement": "最少4个字符，至少1个小写字母、1个数字和1个特殊字符",
+    "invalidUserPassword": "用户名或密码错误",
+    "welcomeAppTitle": "欢迎使用应用程序",
+    "username": "用户名",
+    "password": "密码",
+    "loginButton": "登录",
+    "name": "姓名", 
+    "role": "角色",
+    "logoutButton": "登出",
+
+    "managerRestrictedMessage": "此页面仅限经理查看",
+
+    "appCreatedByNicholasChooJianHao": "登录应用程序创建者朱健豪",
+
+
+    "notLoggedInToSeePage": "您还没有登录，不能能看到这个页面",
+    "userAccessDenied": "用户访问被拒绝",
+    "backToLandingPage": "返回着陆页"
+}

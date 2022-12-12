@@ -5,22 +5,22 @@ import ManagerDashboard from "pages/managerDashboard/ManagerDashboard"
 
 export const allRoutesStore = {
     landingPage: {
-        name: "Landing Page",
+        name: "landingPage",
         path: "/",
         element: <LandingPage />
     },
     loginPage: {
-        name: "Login",
+        name: "loginPage",
         path: "/login",
         element: <LoginPage />
     },
     homePage: {
-        name: "Home",
+        name: "homePage",
         path: "/home",
         element: <HomePage />
     },
     managerDashboard: {
-        name: "Manager Dashboard",
+        name: "managerDashboardPage",
         path: "/manager-dashboard",
         element: <ManagerDashboard />
     }

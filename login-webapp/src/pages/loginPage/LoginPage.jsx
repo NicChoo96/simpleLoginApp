@@ -6,6 +6,7 @@ import { useUserCookie } from '../../helper/userCookie'
 import { useNavigate } from 'react-router-dom'
 import { RoleContext } from 'context/RoleContext'
 import CenterBoxWrapper from 'components/centerBox/CenterBoxWrapper'
+import { useTranslation } from 'react-i18next'
 
 const LoginPage = () => {
   const [username, setUsername] = useState('')
@@ -15,6 +16,8 @@ const LoginPage = () => {
   const [passwordError, setPasswordError] = useState('')
 
   const { setNameCookie, setUsernameCookie } = useUserCookie()
+
+  const { t } = useTranslation()
 
   const { setUserRole } = useContext(RoleContext)
 
@@ -27,8 +30,8 @@ const LoginPage = () => {
     let passwordErrorMessage = ''
 
     // Validation
-    if (username === '') usernameErrorMessage = 'Username is required'
-    if (password === '') passwordErrorMessage = 'Password is required'
+    if (username === '') usernameErrorMessage = t('usernameRequired')
+    if (password === '') passwordErrorMessage = t('passwordRequired')
 
     if (
       password.length > 1 &&
@@ -36,8 +39,7 @@ const LoginPage = () => {
         /^(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{4,}$/,
       )
     ) {
-      passwordErrorMessage =
-        'Minimum of 4 characters, at least one lowercase letter, one number and one special character'
+      passwordErrorMessage = t('passwordRequirement')
     }
 
     setUsernameError(usernameErrorMessage)
@@ -56,7 +58,7 @@ const LoginPage = () => {
 
     const data = response.data
 
-    const setUserInvalidMessage = () => {setPasswordError('Invalid userid or password')}
+    const setUserInvalidMessage = () => {setPasswordError(t('invalidUserPassword'))}
 
     if (data?.role?.roleName) setUserRole(data.role.roleName)
     else {
@@ -83,8 +85,8 @@ const LoginPage = () => {
     <CenterBoxWrapper>
       <form>
         <div className="flex-vertical login-form">
-          <h2>Welcome to the App</h2>
-          <label>Username</label>
+          <h2>{t('welcomeAppTitle')}</h2>
+          <label>{t('username')}</label>
           <input
             type="text"
             onChange={(e) => {
@@ -93,7 +95,7 @@ const LoginPage = () => {
             value={username}
           />
           <p className="input-error">{usernameError}</p>
-          <label>Password</label>
+          <label>{t('password')}</label>
           <input
             type="password"
             onChange={(e) => {
@@ -102,7 +104,7 @@ const LoginPage = () => {
             value={password}
           />
           <p className="input-error">{passwordError}</p>
-          <button onClick={handleLogin}>Login</button>
+          <button onClick={handleLogin}>{t('loginButton')}</button>
         </div>
       </form>
     </CenterBoxWrapper>

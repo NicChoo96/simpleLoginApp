@@ -1,0 +1,30 @@
+{
+    "landingPage": "Landing Page",
+    "loginPage": "Login",
+    "homePage": "Home",
+    "managerDashboardPage": "Manager Dashboard",
+
+    "welcomeLandingTitle": "Welcome to the landing page of this application",
+    "clickLoginInstruction": "Start by clicking on Login at the top",
+
+    "usernameRequired": "Username is required",
+    "passwordRequired": "Password is required",
+    "passwordRequirement": "Minimum of 4 characters, at least one lowercase letter, one number and one special character",
+    "invalidUserPassword": "Invalid userid or password",
+    "welcomeAppTitle": "Welcome to the App",
+    "username": "Username",
+    "password": "Password",
+    "loginButton": "Login",
+    "name": "Name", 
+    "role": "Role",
+    "logoutButton": "Log Out",
+
+    "managerRestrictedMessage": "This page is restricted only for the manager to see",
+
+    "appCreatedByNicholasChooJianHao": "Login Application created by Nicholas Choo Jian Hao",
+
+
+    "notLoggedInToSeePage": "You are not logged in yet to see this page",
+    "userAccessDenied": "User access denied",
+    "backToLandingPage": "Back to Landing Page"
+}

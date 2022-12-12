@@ -7,8 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';
 import { getRoledBasedAccessRoutes, RoleContext, RoleProvider } from 'context/RoleContext';
 import Footer from 'components/footer/Footer';
-
-
+import './i18n';
 
 const RouterConfigurator = ()=> {
 

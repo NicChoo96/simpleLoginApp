@@ -5,6 +5,7 @@ import NavBar from 'components/navBar/NavBar'
 import { getRoleBasedNavLinks, RoleContext } from 'context/RoleContext'
 import { useUserCookie } from 'helper/userCookie'
 import { useContext } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useNavigate, redirect } from 'react-router-dom'
 
 const HomePage = () => {
@@ -14,19 +15,21 @@ const HomePage = () => {
 
   const navigate = useNavigate()
 
+  const {t} = useTranslation()
+
   return (
     <>
       <NavBar
-        title="Home"
+        title={t('homePage')}
         routes={getRoleBasedNavLinks(userRole)}
         currentRoute="/home"
       />
 
       {userRole !== '' ? (
         <CenterBoxWrapper>
-          <p>Name: {nameCookie}</p>
-          <p>Username: {usernameCookie}</p>
-          <p>Role: {userRole.toUpperCase()}</p>
+          <p>{t('name')}: {nameCookie}</p>
+          <p>{t('username')}: {usernameCookie}</p>
+          <p>{t('role')}: {userRole.toUpperCase()}</p>
           <LogOutButton />
         </CenterBoxWrapper>
       ) : (

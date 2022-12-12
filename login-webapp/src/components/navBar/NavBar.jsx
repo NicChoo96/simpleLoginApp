@@ -2,6 +2,7 @@ import './NavBar.css'
 
 import { useNavigate } from 'react-router-dom'
 import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const SAMPLE_ROUTE = [
   {
@@ -19,6 +20,8 @@ const NavBar = ({ routes = SAMPLE_ROUTE, title = 'NavBar', currentRoute="/" }) =
 
   const navBarRef = useRef(null)
 
+  const { t } = useTranslation()
+
   return (
     <>
       <div ref={navBarRef} className="navbar">
@@ -33,7 +36,7 @@ const NavBar = ({ routes = SAMPLE_ROUTE, title = 'NavBar', currentRoute="/" }) =
                 }}
                 style={{fontWeight: currentRoute===r.path ? "bold": "normal"}}
               >
-                {r.name}
+                {t(r.name)}
               </button>
             )
           }) || <></>}
