@@ -27,21 +27,19 @@ public class MainController {
     @Autowired
     private UserRoleRepository userRoleRepository;
 
-    @GetMapping(path="/user/getAll")
-    public @ResponseBody Collection<User> getUserAll () {
-        return (Collection<User>) userRepository.findAll();
-    }
-
-    @GetMapping(path="/user")
-    public @ResponseBody User getUser(@RequestParam(value="name") String name){
-        User foundUser = userRepository.findUserByName(name);
-
-        if(foundUser == null) return null;
-
-        return foundUser;
-    }
-
-    private static Log logger = LogFactory.getLog((MainController.class));
+//    @GetMapping(path="/user/getAll")
+//    public @ResponseBody Collection<User> getUserAll () {
+//        return (Collection<User>) userRepository.findAll();
+//    }
+//
+//    @GetMapping(path="/user")
+//    public @ResponseBody User getUser(@RequestParam(value="name") String name){
+//        User foundUser = userRepository.findUserByName(name);
+//
+//        if(foundUser == null) return null;
+//
+//        return foundUser;
+//    }
 
     // Given username and password Post request, match with DB after password encryption is hashed again
     @PostMapping(path="/login")
@@ -53,6 +51,7 @@ public class MainController {
         // user not found from DB
         if(foundUser == null) return null;
 
+        // Matched input password with bcrypt hashed password in DB
         if(foundUser.matchPassword(loginUser.getPassword())){
 
             UserRole foundUserRole = userRoleRepository.getRoleByUser(foundUser.getId());
