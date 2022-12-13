@@ -17,8 +17,8 @@ const LanguageSwitcher = ()=> {
     return(
         <div className='language-switcher'>
             {
-                Object.keys(lngs).map((lng)=> {
-                    return <button onClick={()=> onLanguageChange(lng)} style={{fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal'}}>
+                Object.keys(lngs).map((lng, idx)=> {
+                    return <button key={idx} onClick={()=> onLanguageChange(lng)} style={{fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal'}}>
                         {lngs[lng].nativeName}
                     </button>
                 })

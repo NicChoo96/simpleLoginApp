@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import './LoginPage.css'
 import { sha256 } from 'js-sha256'
 import { useUserCookie } from '../../helper/userCookie'
@@ -17,7 +17,8 @@ const LoginPage = () => {
 
   const { setNameCookie, setUsernameCookie } = useUserCookie()
 
-  const { t } = useTranslation()
+  // TODO: Language is not changed for error messages 
+  const { t, i18n } = useTranslation()
 
   const { setUserRole } = useContext(RoleContext)
 
